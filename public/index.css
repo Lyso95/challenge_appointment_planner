@@ -22,6 +22,22 @@ nav {
   margin-bottom: 20px;
 }
 
+form{
+  width: 33%;
+}
+
+@media screen and (max-width: 1000px) {  
+  form{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {  
+  form{
+    width: 100%;
+  }
+}
+
 h2 {
   font-weight: bold;
   font-size: 18px;
