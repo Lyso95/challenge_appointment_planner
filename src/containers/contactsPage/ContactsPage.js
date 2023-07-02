@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { ContactForm } from "../../components/contactForm/ContactForm";
-//import { TileList } from "../../components/tileList/TileList";
+import { TileList } from "../../components/tileList/TileList";
 
 export const ContactsPage = ({contacts, addContact}) => {
   /*
@@ -24,8 +24,10 @@ export const ContactsPage = ({contacts, addContact}) => {
       setName("");
       setPhone("");
       setEmail("");
+      console.log(contacts);
+      console.log(name);
     }
-    alert(contact);
+    console.log("Error: Duplicate");
   };
 
   /*
@@ -51,7 +53,7 @@ export const ContactsPage = ({contacts, addContact}) => {
       <section>
         <h2>Contacts</h2>
         <hr />
-        {/* <TileList contacts={contacts}/> */}
+        <TileList contacts={contacts}/>
       </section>
     </div>
   );
