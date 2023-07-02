@@ -18,7 +18,6 @@ function App() {
   */
  function addContact(contact){
   setContact((prev) => {
-    console.log(contact)
     return [...prev, contact]
   });
  };
