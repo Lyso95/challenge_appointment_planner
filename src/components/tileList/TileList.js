@@ -1,10 +1,10 @@
 import React from "react";
 import {Tile} from "../tile/Tile";
 
-export const TileList = ({contacts}) => {
+export const TileList = ({data}) => {
   return (
     <>
-    {contacts?.map((el, i) => <Tile key={i} value={el} />)}
+    {data?.map((el, i) => <Tile key={i} value={el} />)}
     </>
   );
 };

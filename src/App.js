@@ -21,11 +21,11 @@ function App() {
     return [...prev, contact]
   });
  };
- function addAppointment({name, contact, date, time}){
+ function addAppointment(appointment){
   setAppointment((prev) => {
-    return[...prev, {name, contact, date, time}]
+    return[...prev, appointment]
   });
- }
+ };
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
