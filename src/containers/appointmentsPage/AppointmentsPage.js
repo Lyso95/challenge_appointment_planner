@@ -14,13 +14,15 @@ export const AppointmentsPage = ({contacts, appointments, addAppointment}) => {
   const [time, setTime] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     /*
     Add contact info and clear data  
     */
     let formData = new FormData(e.target);
     let appointment = Object.fromEntries(formData.entries());
     addAppointment(appointment);
+    e.preventDefault();
+
+    console.log(appointment);
     setTitle("");
     setContact("");
     setDate("");
@@ -32,9 +34,10 @@ export const AppointmentsPage = ({contacts, appointments, addAppointment}) => {
       <section>
         <h2>Add Appointment</h2>
         <AppointmentForm
+        contacts={contacts}
         title={title}
         setTitle={setTitle}
-        contacts={contacts}
+        contact={contact}
         setContact={setContact}
         date={date}
         setDate={setDate}

@@ -23,15 +23,16 @@ export const AppointmentForm = ({
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-          <label htmlFor="title">Title:</label>
-          <input type="text" name="title" defaultValue={title} id="name" onChange={e => setTitle(e.target.value)}/>
-          <label htmlFor="contact">contact:</label>
-          <ContactPicker contact={contact} contacts={contacts} onChange={e => setContact(e.target.value)}/>
-          <label htmlFor="date">Date:</label>
-          <input type="date" name="date" defaultValue={getTodayString} id="date" onChange={e => setDate(e.target.value)} />
-          <input type="time" name="time" defaultValue={time} id="time" onChange={e => setTime(e.target.value)}/>
-          <input type="submit" id="submit" value="Submit" />
+      <form id="appointmentForm" name="appointmentForm" onSubmit={handleSubmit}>
+          <label htmlFor="title">Title: {title}</label>
+          <input type="text"id="title" name="title" value={title} onChange={e => setTitle(e.target.value)}/>
+          <label htmlFor="date">Date: {date}</label>
+          <input type="date" name="date" min={getTodayString} value={date} id="date" onChange={e => setDate(e.target.value)} />
+          <label htmlFor="time">Time: {time}</label>
+          <input type="time" id="time" name="time" value={time} onChange={e => setTime(e.target.value)}/>
+          <label>Contact:</label>
+          <ContactPicker contacts={contacts} contact={contact} setContact={setContact}/>
+          <input type="submit" value="Submit" />
         </form>
       </>
   );
